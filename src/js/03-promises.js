@@ -8,19 +8,18 @@ refs.amountEl = document.querySelector('input[name="amount"]');
 refs.buttonEl = document.querySelector('button[type="submit"]');
 
 
-
-
 refs.formEl.addEventListener('submit', event => {
   event.preventDefault();
   const delay = Number(refs.delayEl.value);
   const step = Number(refs.stepEl.value);
   const amount = Number(refs.amountEl.value);
+
   let difference = delay;
   for (let i = 1; i <= amount; i += 1){
-    difference += step;
     createPromise(i, difference)
     .then(({ position, delay }) => Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`))
     .catch(({ position, delay }) => Notiflix.Notify.failure (`❌ Rejected promise ${position} in ${delay}ms`));
+    difference += step;
 }
 
 });
