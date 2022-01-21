@@ -22,6 +22,21 @@ refs.formEl.addEventListener('submit', event => {
     difference += step;
 }
 
+  // ~~ Типо второй способ ~~
+  // let x = 0;
+  // const intervalId = setInterval( () => {
+  //   x += 1;
+  //   createPromise(x, difference)
+  //   .then(({ position, delay }) => Notiflix.Notify.success(`✅ Fulfilled promise ${position} in ${delay}ms`))
+  //   .catch(({ position, delay }) => Notiflix.Notify.failure (`❌ Rejected promise ${position} in ${delay}ms`));
+  //   difference += step;
+
+  //   if(x === amount){
+  //     clearInterval(intervalId);
+  //   }
+
+  // });
+
 });
 
 function createPromise(position, delay) {
